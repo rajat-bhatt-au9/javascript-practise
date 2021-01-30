@@ -1,24 +1,18 @@
-const person = {
-  name: "Rajat Bhatt",
-  age: 34,
-  greet() {
-    console.log("Hi my name is " + this.name);
-  },
+const fetchData = () => {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Done!!");
+    }, 1500);
+  });
+  return promise;
 };
 
-const hobbies = ["Sports", "Cooking"];
+setTimeout(() => {
+  console.log("Timer is done !! ");
+  fetchData().then((text) => {
+    console.log(text);
+  });
+}, 2000);
 
-/* for (let hobby of hobbies) {
-  console.log(hobby);
-}
- 
-
-console.log(
-  hobbies.map((hobby) => {
-    return "Hobby: " + hobby;
-  })
-);
-*/
-
-const copiedArray = [...hobbies];
-console.log(copiedArray);
+console.log("Hello");
+console.log("Hola");
